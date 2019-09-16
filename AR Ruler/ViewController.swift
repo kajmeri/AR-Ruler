@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ARDicee
+//  AR Ruler
 //
 //  Created by Krishna Ajmeri on 9/16/19.
 //  Copyright © 2019 Krishna Ajmeri. All rights reserved.
@@ -109,7 +109,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 			pow(end.position.z - start.position.z, 2)
 		) / 0.0254
 		
-		updateText(text: "\(distance) in", atPosition: end.position)
+		updateText(text: String(format: "%.2f in.", distance), atPosition: end.position)
 		
 	}
 	
@@ -125,7 +125,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 		
 		textNode.position = SCNVector3(position.x, position.y + 0.01, position.z)
 		
-		textNode.scale = SCNVector3(0.01, 0.01, 0.01)
+		textNode.scale = SCNVector3(0.005, 0.005, 0.005)
 		
 		sceneView.scene.rootNode.addChildNode(textNode)
 	}
